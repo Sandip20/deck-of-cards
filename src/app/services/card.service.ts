@@ -9,7 +9,7 @@ const httpOptions = {
 })
 export class CardserviceService {
 
-  url = "http://localhost:3000/api/v1/cards";
+  url = "/api/v1/cards";
   constructor(private http: HttpClient) { }
   seedCards(data: any): Observable<any> {
     return this.http.post(this.url + '/', data, httpOptions);

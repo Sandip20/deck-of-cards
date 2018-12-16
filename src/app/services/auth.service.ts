@@ -14,7 +14,7 @@ export class AuthService {
   private authenticated = false;
   profileurlchange = new Subject<string>();
 
-  url = "http://localhost:3000/api/v1/users";
+  url = "/api/v1/users";
   constructor(private http: HttpClient) { }
   login(user: User): Observable<any> {
     return this.http.post(this.url + '/signin', user, httpOptions)
@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   isAuthenticated(): Observable<any> {
-    return this.http.get('http://localhost:3000/api/v1/auth/');
+    return this.http.get('/api/v1/auth/');
   }
   authenticate() {
     this.authenticated = true;
@@ -45,7 +45,7 @@ export class AuthService {
     this.authenticated = false;
   }
   logOut() {
-    return this.http.get('http://localhost:3000/api/v1/auth/logout');
+    return this.http.get('/api/v1/auth/logout');
   }
   getUser(username: string): Observable<any> {
     return this.http.get(this.url + '/' + username);
