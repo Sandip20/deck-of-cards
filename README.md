@@ -6,7 +6,7 @@ This project uses Angular Mongo NodeJs and Express
 
 ## Start web server
 
-Run `npm start `forbuild and start  webserver Navigate to `http://localhost:3000/`.
+Run `npm start `for build and start  webserver Navigate to `http://localhost:3000/`.
 
 ## User needs to Register first with username which should be unique 
 
