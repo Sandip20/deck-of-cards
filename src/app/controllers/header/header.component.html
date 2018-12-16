@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="img-circle  pull-right">
+                <img [src]="profileUrl" style="width: 100px;height: 100px;" >
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" appDropdown>
+                    <a style="cursor: pointer;" class="dropdown-toggle " role="button">{{username}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a style="cursor: pointer;" routerLink="/profile">Profile</a></li>
+                        <li><a style="cursor: pointer;" routerLink="/home">Home</a></li>
+                        <li><a style="cursor: pointer;" (click)="logout()">Log out</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>

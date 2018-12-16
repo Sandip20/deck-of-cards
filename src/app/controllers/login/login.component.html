@@ -1,0 +1,36 @@
+<div class="container" id="login-page">
+  <div class="col-lg-4 col-md-3 col-sm-2"></div>
+  <div class="col-lg-4 col-md-6 col-sm-8">
+    <div class="" style="text-align: center; padding-top:20%;">
+      <h2>Deck of Cards</h2>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row">
+          <div class="col-lg-12  col-md-12 col-sm-12">
+            <input class="form-control" type="text" name="username" ngModel required placeholder="user name">
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12  col-md-12 col-sm-12">
+            <input class="form-control" type="password" id="password" name="password" ngModel required placeholder=" password">
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <button type="submit" class="btn btn-success" [disabled]="f.invalid">Sign In </button>
+        </div>
+
+
+
+      </form>
+      <hr>
+      <span>Dont have account?</span>
+      <a routerLink="/register">Register </a>
+
+    </div>
+    <footer>
+
+    </footer>
+  </div>
+
+</div>

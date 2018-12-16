@@ -1,0 +1,84 @@
+<app-header>
+    </app-header>
+<div class="container-fluid img-rounded" style="border: 1px solid gray; padding: 25px;width:50%; height:100% ">
+    <div>
+        <!-- <button  type="button" (click)="filePicker.click()">Upload Photo</button> -->
+        <div class="row">
+            <div class="col-md-6 " >
+                <img [src]="imageUrl1" style="width: 250px;height: 250px; padding: 10px">
+                <input type="file" #Image1 accept="image/*" (change)="onImagePicked($event)" *ngIf="!imageUrl1||default1">
+                <button class="btn btn-primary" *ngIf="imageUrl1!=profileurl &&!default1" (click)="maketItProfile(imageUrl1)">make profile picture</button>
+                <!-- <button class="btn btn-primary" *ngIf="imageUrl1===profileurl &&!isdefult" (click)="remove(1)">remove photo</button> -->
+
+            </div>
+            <div class="col-md-6">
+                <img [src]="imageUrl2" style="width: 250px;height: 250px;padding: 10px ">
+                <input type="file" #Image2 accept="image/*" (change)="onImagePicked1($event)" *ngIf="!imageUrl2|| default2">
+                <button class="btn btn-primary" *ngIf="imageUrl2!=profileurl&& !default2" (click)="maketItProfile(imageUrl2)">make profile picture</button>
+                <!-- <button class="btn btn-primary" *ngIf="imageUrl2===profileurl&&!isdefult" (click)="remove(2)">remove profile</button> -->
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div>
+        <label style="padding: 10px">Username:</label><span class="hover-text-field" *ngIf="!flag1" (dblclick)="toggle1()">{{user.username}}
+            <div class="edit-pencil glyphicon glyphicon-pencil"></div>
+        </span>
+        <span *ngIf="flag1"><input type="text" [(ngModel)]="user.username">
+        </span>
+        <div class="edit-button-group pull-right" *ngIf="flag1">
+            <div class="glyphicon glyphicon-ok" (click)="save1()"></div>
+            <div class="glyphicon glyphicon-remove" (click)="cancel1()"></div>
+        </div>
+        <br>
+        <label>First Name :</label> <span class="hover-text-field" *ngIf="!flag2" (dblclick)="toggle2()">{{user.name}}
+            <div class="edit-pencil glyphicon glyphicon-pencil"></div>
+
+        </span>
+        <span *ngIf="flag2"><input [(ngModel)]="user.name">
+            <div class="edit-button-group pull-right" *ngIf="flag2">
+                <div class="glyphicon glyphicon-ok" (click)="save2()"></div>
+                <div class="glyphicon glyphicon-remove" (click)="cancel2()"></div>
+            </div>
+        </span>
+        <br/>
+        <label>Age:</label> <span class="hover-text-field" *ngIf="!flag3" (dblclick)="toggle3()">{{user.age}}
+            <div class="edit-pencil glyphicon glyphicon-pencil"></div>
+
+        </span>
+        <span style="padding: 10px" *ngIf="flag3"><input [(ngModel)]="user.age" type="number" required>
+            <div class="edit-button-group pull-right" *ngIf="flag3">
+                <div class="glyphicon glyphicon-ok" (click)="save3()"></div>
+                <div class="glyphicon glyphicon-remove" (click)="cancel3()"></div>
+            </div>
+        </span>
+        <br/>
+
+        <label>skills:</label> <span class="hover-text-field" *ngIf="!flag4" (dblclick)="toggle4()">{{showskills}}
+            <div class="edit-pencil glyphicon glyphicon-pencil"></div>
+
+        </span>
+        <span *ngIf="flag4">
+            <ng-multiselect-dropdown [placeholder]="'select skills'" [data]="dropdownList" [(ngModel)]="user.skills" [settings]="dropdownSettings"
+                (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelect)="onDeSelect($event)">
+            </ng-multiselect-dropdown>
+            <!-- <input [(ngModel)]="user.age" type="number" required> -->
+            <div class="edit-button-group pull-right" *ngIf="flag4">
+                <div class="glyphicon glyphicon-ok" (click)="save4()"></div>
+                <div class="glyphicon glyphicon-remove" (click)="cancel4()"></div>
+            </div>
+        </span>
+
+
+
+
+
+    </div>
+
+
+
+</div>

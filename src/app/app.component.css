@@ -1,0 +1,26 @@
+/* stylesheet for the Overview and Demo pages */
+
+body {
+    font-family: sans-serif;
+  }
+  
+  h2 {
+    margin-bottom: 2px;
+  }
+  
+  .demoPage {
+    background-color: #383;
+    color: white;
+  }
+  
+  .demoPage button {
+    padding: 5px 8px;
+  }
+  
+  .demoPage button:disabled {
+    opacity: 0.3;
+  }
+  
+  .demoPage a {
+    color: #ee9;
+  }

@@ -1,0 +1,80 @@
+<app-header>
+</app-header>
+<html ng-app="cardDemo">
+
+<head>
+  Cards
+</head>
+
+
+<body class="demoPage">
+
+
+  <div>
+    <div *ngIf="deck.cards.length==0">
+      <button type="button" (click)="reset()">Restart</button>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="card-list">
+        <li *ngFor="let card  of deck.cards;let i = index" draggable [dragData]="card">
+
+          <div class="card {{card.suit.color}}" title="{{card.displayName}}">
+            <div class="letter">{{card.letter}}</div>
+            <div class="suit" [innerHTML]="card.suit.glyph"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+
+
+
+
+  <footer>
+    <div class="row">
+      <div class="col-md-3">
+        <div droppable (onDrop)="onDItemDrop($event)">
+          <div class="panel-heading"> Diamonds</div>
+          <div class="panel-body">
+            <li *ngFor="let item of diamonds" class="list-group-item">{{item.name}}</li>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div droppable (onDrop)="onHItemDrop($event)">
+          <div class="panel-heading">Hearts</div>
+          <div class="panel-body">
+            <li *ngFor="let item of hearts" class="list-group-item">{{item.name}}</li>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div droppable (onDrop)="onSItemDrop($event)">
+          <div class="panel-heading">Spades</div>
+          <div class="panel-body">
+            <li *ngFor="let item of spades" class="list-group-item">{{item.name}}</li>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+        <div droppable (onDrop)="onCItemDrop($event)">
+          <div class="panel-heading">Clubs</div>
+          <div class="panel-body">
+            <li *ngFor="let item of clubs" class="list-group-item">{{item.name}}</li>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+</body>
+
+</html>
