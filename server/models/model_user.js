@@ -7,7 +7,7 @@ var userSchema = new Schema({
     age: { type: Number, required: true },
     skills: { type: Array },
     password:{type:String},
-    profileUrl:{type:String,default:'http://localhost:3000/assets/images/default.png'},
+    profileUrl:{type:String,default:'http://winafestival.com/wp-content/uploads/2016/08/perfil-1.png'},
     //imagePaths: { type: Schema.Types.Mixed },
     imagePath1:{type:String},
     imagePath2:{type:String}
