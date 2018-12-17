@@ -10,7 +10,7 @@ Run `npm start `for build and start  webserver Navigate to `http://localhost:300
 
 ## User needs to Register first with username which should be unique 
 
-1)Once user is Registered , He will be able to login with his credentials
+```1) Once user is Registered , He will be able to login with his credentials```
 2)On Login He will be shown home where all cards are scattered 
 3)At right top most he can see profile pic if user has set from Profile window
 4)User can only upload two photos and can set any one of the photos as profile pic
