@@ -1,7 +1,7 @@
 pipeline {
-    agent none
+    agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
                 bat 'ipconfig'
             }
